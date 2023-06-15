@@ -4,13 +4,10 @@ struct Range {
     // static Range from_ends(ull start, ull end) { return {start, end}; }
 
     bool operator==(const Range &rhs) const {
-        return (is_empty() && rhs.is_empty()) ||
-               (start == rhs.start && end == rhs.end);
+        return (is_empty() && rhs.is_empty()) || (start == rhs.start && end == rhs.end);
     }
 
-    bool is_subset_of(Range other) const {
-        return other.start <= start && end <= other.end;
-    }
+    bool is_subset_of(Range other) const { return other.start <= start && end <= other.end; }
     Range intersect_with(Range other) const {
         return Range{
             .start = max(start, other.start),

@@ -43,7 +43,7 @@ template <const ull MOD, const ull prim_root> struct NTT {
     }
 
     // Repeated application
-    void ntt_q(Polynomial &a, ull q) {
+    static void ntt_q(Polynomial &a, ull q) {
         const auto factor = modpow(a.size(), ((q / 4) * 2));
         for (auto &x : a) x = modmul(x, factor);
         urep(_, q % 4) ntt_iter(a);
