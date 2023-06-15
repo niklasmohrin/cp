@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ROOT_DIR=$(dirname $0)/..
+BASE_FLAGS=$(paste -sd " " "$ROOT_DIR/compile_flags.txt")
+test -n "$COMPPROG_LOCAL" && DEFINES="-DCOMPPROG_LOCAL"
+exec make 1>&2 CXXFLAGS="$BASE_FLAGS $DEFINES $COMPPROG_EXTRA_FLAGS" $1

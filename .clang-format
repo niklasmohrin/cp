@@ -1,0 +1,12 @@
+---
+BasedOnStyle: LLVM
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLoopsOnASingleLine: true
+BinPackArguments: false
+BinPackParameters: false
+BreakConstructorInitializers: BeforeComma
+ColumnLimit: 100
+IndentWidth: 4
+PackConstructorInitializers: CurrentLine

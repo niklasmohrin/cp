@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+if [[ $# -eq 0 ]] ; then
+    echo 'no argument'
+    exit 42
+fi
+
+ROOT_DIR=`dirname $0`/..
+mkdir -p $1
+cp $ROOT_DIR/template.cpp $1/$1.cpp
+if test -e "$HOME/Downloads/samples-$1.zip"; then
+    echo "Found"
+    mv "$HOME/Downloads/samples-$1.zip" "$HOME/Downloads/prob-$1.pdf" "$1/"
+    unzip -d "$1/" "$1/samples-$1.zip"
+    rm "$1/samples-$1.zip"
+fi

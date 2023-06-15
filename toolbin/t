@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ "$1" != "-q" ]]; then
+    set -e
+fi
+
+PROG=`basename $PWD`
+if [ -f "$PROG.py" ]; then
+    PROG="$PROG.py"
+else
+    tput setaf 2
+    build $PROG
+fi
+
+for f in *.in; do
+    [ -f "$f" ] || break
+    tput setaf 1 && echo $f...
+    tput sgr0
+    ./$PROG < $f | diff $1 -U 1 --color=always ${f%.in}.ans -
+done

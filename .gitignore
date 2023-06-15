@@ -1,0 +1,5 @@
+# Ignore files with no extension
+*
+!/**/
+!*.*
+!toolbin/*
