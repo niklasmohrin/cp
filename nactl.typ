@@ -1,4 +1,4 @@
-#set page(flipped: true, margin: 1cm)
+#set page(flipped: true, margin: 1cm, numbering: "1 / 1")
 #set text(8.5pt)
 
 #align(center, underline(text(17pt, weight: 700, "Niklas' Algorithm Competition Template Library (NACTL)")))
@@ -32,6 +32,8 @@
 
 = Graph
 
+#include_snippet("Dijkstra", "snippets/dijkstra.hpp")
+#include_snippet("Floyd Warshall", "snippets/floyd_warshall.hpp")
 #include_snippet("Topological Order", "snippets/topo.hpp")
 #include_snippet("Bridges", "snippets/bridges.hpp")
 #include_snippet("Cut-Vertices", "snippets/cut_vertices.hpp")
