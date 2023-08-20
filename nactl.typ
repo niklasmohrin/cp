@@ -32,7 +32,7 @@
 #let include_snippet(title, filename, level: 2) = {
   heading(level: level, title)
   raw(
-    read(filename).trim(regex("(?sm).*// nactl: start\s*"), at: start),
+    read(filename).trim(regex("(?sm).*// nactl: start\s*"), at: start).trim(regex("(?sm)\s*// nactl: end.*"), at: end),
     block: true,
     lang: "cpp",
   )
@@ -49,6 +49,7 @@
 #include_snippet("Sparse Table", "snippets/sparse_table.hpp")
 #include_snippet("Segment Tree", "snippets/segment_tree.hpp")
 #include_snippet("Treap", "snippets/treap.hpp")
+#include_snippet("Vector", "snippets/vec.hpp")
 
 = Graph
 
@@ -66,6 +67,14 @@
 #include_snippet("Dinitz", "snippets/dinitz.hpp")
 #include_snippet("Path Decomposition", "snippets/flow_decomp.hpp")
 #include_snippet("Min Cost Flow", "snippets/min_cost_flow.hpp")
+
+= Matchings
+
+== Maximum Weight Bipartite Matching
+
+Use min-cost-flow, but make sure to look at current cost in each iteration, because max-flow might not be max-weight.
+
+#include_snippet("Stable Matching (Gale Shapley)", "snippets/stable_matching.hpp")
 
 = Trees
 
