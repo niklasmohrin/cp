@@ -42,14 +42,18 @@
 #line(length: 100%, stroke: 0.1pt)
 #include_snippet("Template", "template.cpp", level: 1)
 
+= Utilities
+
+#include_snippet("Range", "snippets/range.hpp")
+#include_snippet("Integer hash", "snippets/hash.hpp")
+#include_snippet("Vector", "snippets/vec.hpp")
+
 = Data Structures
 
 #include_snippet("Union Find", "snippets/union_find.hpp")
-#include_snippet("Range", "snippets/range.hpp")
 #include_snippet("Sparse Table", "snippets/sparse_table.hpp")
 #include_snippet("Segment Tree", "snippets/segment_tree.hpp")
 #include_snippet("Treap", "snippets/treap.hpp")
-#include_snippet("Vector", "snippets/vec.hpp")
 
 = Graph
 
