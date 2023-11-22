@@ -1,6 +1,4 @@
 # Ignore files with no extension
-*
-!/**/
-!*.*
 !toolbin/*
 slides/
+.direnv/
