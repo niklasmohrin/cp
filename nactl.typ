@@ -102,6 +102,9 @@ Note: Slides mention centroid tree for radius queries.
 
 = Math
 
+Primes: $3$, $5$, $10007$, $10009$, $10037$.
+Primes for NTT: $M = 998244353$ with primitive root $3$, $M = 880803841$ with primitive root $26$.
+
 #include_snippet("Chinese Remainder Theorem", "snippets/crt.hpp")
 #include_snippet("Primality and Factoring", "snippets/factorize.hpp")
 #include_snippet("Fast Fourier Transform", "snippets/fft.hpp")
