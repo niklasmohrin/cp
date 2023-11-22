@@ -2,3 +2,4 @@
 !toolbin/*
 slides/
 .direnv/
+*.pdf
