@@ -3,3 +3,5 @@
 slides/
 .direnv/
 *.pdf
+result
+todo

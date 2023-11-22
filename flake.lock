@@ -18,6 +18,22 @@
         "type": "github"
       }
     },
+    "kactl": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698269178,
+        "narHash": "sha256-r7Sv/qFVu/8OX4ZjP7zPipVUwyupo5rIQ/MOnII+i1w=",
+        "owner": "kth-competitive-programming",
+        "repo": "kactl",
+        "rev": "81d547a917d05fd482ba2e55a3d1fb1e444af919",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kth-competitive-programming",
+        "repo": "kactl",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1700403855,
@@ -37,6 +53,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "kactl": "kactl",
         "nixpkgs": "nixpkgs"
       }
     },
