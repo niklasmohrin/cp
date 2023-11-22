@@ -80,6 +80,10 @@
 
 = Matchings
 
+== Matching, Vertex Cover and Independent Set
+
+For a bipartite graph over $A union B$, if $(S, T)$ is a minimum cut and we define $A_S union.dot A_T = A$ and $B_S union.dot B_T = B$, then $A_T union B_S$ is a minimum vertex cover. The complement is a maximum Independent set.
+
 == Maximum Weight Bipartite Matching
 
 Use min-cost-flow, but make sure to look at current cost in each iteration, because max-flow might not be max-weight.
