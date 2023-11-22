@@ -1,4 +1,3 @@
-
 {
   description = "NACTL";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
@@ -15,6 +14,9 @@
             typst
             typst-lsp
             typst-fmt
+
+            clang-tools_16
+            clang_16
           ];
         };
       });
