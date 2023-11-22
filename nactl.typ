@@ -29,17 +29,22 @@
 #set heading(numbering: "1.1")
 #outline(indent: true)
 
-#let include_snippet(title, filename, level: 2) = {
+#let include_snippet(title, filename, level: 2, lang: "cpp") = {
   heading(level: level, title)
   raw(
     read(filename).trim(regex("(?sm).*// nactl: start\s*"), at: start).trim(regex("(?sm)\s*// nactl: end.*"), at: end),
     block: true,
-    lang: "cpp",
+    lang: lang,
   )
   line(length: 100%, stroke: 0.1pt)
 }
 
 #line(length: 100%, stroke: 0.1pt)
+
+= Setup
+
+#include_snippet("Build", "toolbin/build", lang: "sh")
+#include_snippet("Test", "toolbin/t", lang: "sh")
 #include_snippet("Template", "template.cpp", level: 1)
 
 = Utilities
