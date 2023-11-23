@@ -64,7 +64,7 @@
 #include_snippet("Sparse Table", "snippets/sparse_table.hpp")
 #include_snippet("Segment Tree", "snippets/segment_tree.hpp")
 #include_snippet("Treap", "snippets/treap.hpp")
-#include_snippet("2-SAT", "snippets/two_sat.hpp")
+#include_snippet("2-SAT", "snippets/two_sat.cpp")
 
 = Graph
 

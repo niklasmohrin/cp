@@ -55,6 +55,7 @@ struct TwoSat {
         return decision.size() - 1;
     }
 
+    void either(Node a, Node b) { insert_imp(neg(a), b); }
     void insert_imp(Node a, Node b) {
         insert_imp(index_of(a), index_of(b));
     }
@@ -153,3 +154,35 @@ struct TwoSat {
         return true;
     }
 };
+
+// nactl: end
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.precision(10);
+
+    // https://judge.yosupo.jp/problem/two_sat
+    char c;
+    // skip some chars
+    cin >> c >> c >> c >> c;
+    uint n, m;
+    cin >> n >> m;
+    TwoSat s(n);
+    urep(_, m) {
+        int i, j, zero;
+        cin >> i >> j >> zero;
+        s.either({abs(i) - 1, i > 0}, {abs(j) - 1, j > 0});
+    }
+    if (s.solve()) {
+        cout << "s SATISFIABLE\n";
+        cout << "v ";
+        urep(i, n) {
+            if (s.decision[i] == No) cout << "-";
+            cout << i + 1 << " ";
+        }
+        cout << "0\n";
+    } else {
+        cout << "s UNSATISFIABLE\n";
+    }
+}
