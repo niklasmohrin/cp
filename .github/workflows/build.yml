@@ -10,14 +10,18 @@ jobs:
     - uses: cachix/install-nix-action@v22
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        extra_nix_config: "store = /home/runner/nix"
     - name: Cache Nix
       uses: actions/cache@v3.3.0
       with:
         key: ${{ hashfiles('flake.nix') }}
         path: ~/nix
-    - run: nix --store ~/nix build '.#nactl' --out-link nactl.pdf
-    - run: nix --store ~/nix build '.#kactl' --out-link kactl.pdf
-    - run: nix --store ~/nix build '.#nactl-complete' --out-link nactl-complete.pdf
+    - run: nix build '.#nactl'
+    - run: cp /home/runner/nix$(realpath result) nactl.pdf
+    - run: nix build '.#kactl'
+    - run: cp /home/runner/nix$(realpath result) kactl.pdf
+    - run: nix build '.#nactl-complete'
+    - run: cp /home/runner/nix$(realpath result) nactl-complete.pdf
     - uses: actions/upload-artifact@v3
       with:
         name: PDFs
