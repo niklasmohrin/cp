@@ -104,6 +104,18 @@ index 686a119..f2c2ed3 100644
 -			\item ways a convex polygon with $n+2$ sides can be cut into triangles by connecting vertices with straight lines.
 -			\item permutations of $[n]$ with no 3-term increasing subseq.
 -		\end{itemize}
+diff --git a/content/contest/chapter.tex b/content/contest/chapter.tex
+index 8c95e1a..ae51693 100644
+--- a/content/contest/chapter.tex
++++ b/content/contest/chapter.tex
+@@ -1,7 +1,3 @@
+ \chapter{Contest}
+ 
+ \kactlimport[-l rawcpp]{template.cpp}
+-\kactlimport[-l sh]{.bashrc}
+-\kactlimport[-l raw]{.vimrc}
+-\kactlimport[-l raw]{hash.sh}
+-\kactlimport[-l raw]{troubleshoot.txt}
 diff --git a/content/data-structures/chapter.tex b/content/data-structures/chapter.tex
 index 37f75c2..23a1d74 100644
 --- a/content/data-structures/chapter.tex
@@ -126,6 +138,18 @@ index 37f75c2..23a1d74 100644
 -\kactlimport{FenwickTree2d.h}
 -\kactlimport{RMQ.h}
 -\kactlimport{MoQueries.h}
+diff --git a/content/geometry/chapter.tex b/content/geometry/chapter.tex
+index 9bc4a8b..442d1c4 100644
+--- a/content/geometry/chapter.tex
++++ b/content/geometry/chapter.tex
+@@ -36,7 +36,6 @@
+ 	% \kactlimport{ManhattanMST.h}
+ 	\kactlimport{kdTree.h}
+ 	% \kactlimport{DelaunayTriangulation.h}
+-	\kactlimport{FastDelaunay.h}
+ 
+ \section{3D}
+ 	\kactlimport{PolyhedronVolume.h}
 diff --git a/content/graph/chapter.tex b/content/graph/chapter.tex
 index ac07573..739d237 100644
 --- a/content/graph/chapter.tex
@@ -192,7 +216,7 @@ index ac07573..739d237 100644
 -		A simple graph with node degrees $d_1 \ge \dots \ge d_n$ exists iff $d_1 + \dots + d_n$ is even and for every $k = 1\dots n$,
 -		\[ \sum _{i=1}^{k}d_{i}\leq k(k-1)+\sum _{i=k+1}^{n}\min(d_{i},k). \]
 diff --git a/content/kactl.tex b/content/kactl.tex
-index a7270f2..7f1490e 100644
+index a7270f2..b42ee88 100644
 --- a/content/kactl.tex
 +++ b/content/kactl.tex
 @@ -2,14 +2,13 @@
@@ -212,14 +236,6 @@ index a7270f2..7f1490e 100644
  	% Small KACTL header on the first page:
  	% \maketitle{``One Last Time'' Edition}{\today}
  	\begin{multicols*}{3}
-@@ -18,7 +17,6 @@
- 	\setcounter{tocdepth}{0}
- 	\tableofcontents
- 
--	\kactlchapter{contest}
- 	\kactlchapter{math}
- 	\kactlchapter{data-structures}
- 	\kactlchapter{numerical}
 diff --git a/content/math/chapter.tex b/content/math/chapter.tex
 index c848ed8..fc138c3 100644
 --- a/content/math/chapter.tex
@@ -453,3 +469,32 @@ index 18969d7..5a19622 100644
 -	\kactlimport{FastFourierTransformMod.h}
 -	\kactlimport{NumberTheoreticTransform.h}
 -	\kactlimport{FastSubsetTransform.h}
+diff --git a/content/strings/chapter.tex b/content/strings/chapter.tex
+index 7db9b77..e5fa0d1 100644
+--- a/content/strings/chapter.tex
++++ b/content/strings/chapter.tex
+@@ -1,10 +1,4 @@
+ \chapter{Strings}
+ 
+-\kactlimport{KMP.h}
+-\kactlimport{Zfunc.h}
+ \kactlimport{Manacher.h}
+ \kactlimport{MinRotation.h}
+-\kactlimport{SuffixArray.h}
+-\kactlimport{SuffixTree.h}
+-\kactlimport{Hashing.h}
+-\kactlimport{AhoCorasick.h}
+diff --git a/content/various/chapter.tex b/content/various/chapter.tex
+index dc89331..cd54012 100644
+--- a/content/various/chapter.tex
++++ b/content/various/chapter.tex
+@@ -38,9 +38,3 @@
+ 			\item \lstinline{#pragma GCC optimize ("trapv")} kills the program on integer overflows (but is really slow).
+ 		\end{itemize}
+ 	\kactlimport{FastMod.h}
+-	\kactlimport{FastInput.h}
+-	\kactlimport{BumpAllocator.h}
+-	\kactlimport{SmallPtr.h}
+-	\kactlimport{BumpAllocatorSTL.h}
+-	% \kactlimport{Unrolling.h}
+-	\kactlimport{SIMD.h}
