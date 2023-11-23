@@ -34,7 +34,7 @@
             nativeBuildInputs = with pkgs; [
               python310
               (texlive.combine {
-                inherit (texlive) scheme-medium enumitem titling todonotes cleveref framed tocloft titlesec paralist;
+                inherit (texlive) scheme-medium enumitem framed tocloft titlesec paralist;
               })
             ];
             patches = [ ./kactl.patch ];
