@@ -33,8 +33,9 @@
 #set heading(numbering: "1.1")
 #outline(indent: true)
 
-#let include_snippet(title, filename, level: 2, lang: "cpp") = {
+#let include_snippet(title, filename, level: 2, lang: "cpp", description: none) = {
   heading(level: level, title)
+  description
   raw(
     read(filename).trim(regex("(?sm).*// nactl: start\s*"), at: start).trim(regex("(?sm)\s*// nactl: end.*"), at: end),
     block: true,
@@ -103,7 +104,12 @@ Note: Slides mention centroid tree for radius queries.
 
 = Strings
 
-#include_snippet("P and Z functions", "snippets/string_p_z.hpp")
+#include_snippet("P and Z functions", "snippets/string_p_z.hpp", description: [
+  Definition:
+  - $p(i)$ is the length of the longest proper prefix of $s$ that is also a suffix of $s[..i]$.
+  - $z(i)$ is the length of the longest common prefix of $s$ and $s[i..]$.
+  #image("assets/p-z-functions.png")
+])
 #include_snippet("Rolling hashes", "snippets/string_hashing.hpp")
 #include_snippet("Suffix Array", "snippets/suffix_array.hpp")
 #include_snippet("Aho-Corasick", "snippets/aho_corasick.hpp")

@@ -1,6 +1,4 @@
 auto prefix(string_view x) {
-    // P[i] is the length of the longest proper prefix of x that is a suffix of
-    // x[..i]
     vector<unsigned> P(x.length());
     P[0] = 0;
     for (unsigned i = 1; i < x.length(); i++) {
@@ -13,7 +11,6 @@ auto prefix(string_view x) {
 }
 
 auto string_z(string_view x) {
-    // Z[i] is the length of the longest common prefix of t and t[i..]
     vector<unsigned> Z(x.length(), 0);
     unsigned l = 0, r = 0;
     for (unsigned i = 1; i < x.length(); i++) {
