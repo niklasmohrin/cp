@@ -21,7 +21,7 @@
           ]
         }),
         align(center, text(weight: 700, title)),
-        align(right, counter(page).display("1 / 1", both: true)),
+        align(right, counter(page).display("1")),
       )
     )
   ],

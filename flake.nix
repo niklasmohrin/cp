@@ -14,6 +14,25 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
+        nactlPageCount = 10;
+        kactlDerivation = initialPage: pkgs.stdenvNoCC.mkDerivation {
+            name = "kactl";
+            src = inputs.kactl;
+            phases = [ "unpackPhase" "patchPhase" "buildPhase" "installPhase" ];
+            nativeBuildInputs = with pkgs; [
+              python310
+              (texlive.combine {
+                inherit (texlive) scheme-medium enumitem framed tocloft titlesec paralist;
+              })
+            ];
+            patches = [ ./kactl.patch ];
+            buildPhase = ''
+                echo '\setcounter{page}{ ${toString initialPage} }' > initial-page.tex
+                make kactl
+            '';
+            installPhase = "cp kactl.pdf $out";
+          };
+
       in
       rec {
         packages = rec {
@@ -27,22 +46,8 @@
             buildPhase = "typst compile nactl.typ $out";
           };
 
-          kactl = pkgs.stdenvNoCC.mkDerivation {
-            name = "kactl";
-            src = inputs.kactl;
-            phases = [ "unpackPhase" "patchPhase" "buildPhase" "installPhase" ];
-            nativeBuildInputs = with pkgs; [
-              python310
-              (texlive.combine {
-                inherit (texlive) scheme-medium enumitem framed tocloft titlesec paralist;
-              })
-            ];
-            patches = [ ./kactl.patch ];
-            buildPhase = "make kactl";
-            installPhase = "cp kactl.pdf $out";
-          };
-
-          nactl-complete = pkgs.runCommand "nactl-complete" { } "${pkgs.poppler_utils}/bin/pdfunite ${nactl} ${kactl} $out";
+          kactl = kactlDerivation 1;
+          nactl-complete = pkgs.runCommand "nactl-complete" { } "${pkgs.poppler_utils}/bin/pdfunite ${nactl} ${kactlDerivation (nactlPageCount + 1)} $out";
         };
 
         devShells.default = pkgs.mkShell {

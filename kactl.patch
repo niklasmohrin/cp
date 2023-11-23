@@ -216,21 +216,23 @@ index ac07573..739d237 100644
 -		A simple graph with node degrees $d_1 \ge \dots \ge d_n$ exists iff $d_1 + \dots + d_n$ is even and for every $k = 1\dots n$,
 -		\[ \sum _{i=1}^{k}d_{i}\leq k(k-1)+\sum _{i=k+1}^{n}\min(d_{i},k). \]
 diff --git a/content/kactl.tex b/content/kactl.tex
-index a7270f2..b42ee88 100644
+index a7270f2..d90515c 100644
 --- a/content/kactl.tex
 +++ b/content/kactl.tex
-@@ -2,14 +2,13 @@
+@@ -2,14 +2,15 @@
  \usepackage{kactlpkg}
  \kactlcontentdir{content}
  
 -\university{KTH}{KTH Royal Institute of Technology}{kth}
 -\team{Omogen Heap}{Simon Lindholm, Johan Sannemo, Mårten Wiman}
 +\university{HPI}{Hasso Plattner Institute}{hpi}
-+\team{Burnoutverbot}{}
++\team{Burnoutverbot}{Burnoutverbot}
  % \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
  \contest{\ }{\today}
  % \enablecolors
  
++\include{initial-page}
++
  \begin{document}
 -	\maketeampage
  	% Small KACTL header on the first page:
@@ -498,3 +500,10 @@ index dc89331..cd54012 100644
 -	\kactlimport{BumpAllocatorSTL.h}
 -	% \kactlimport{Unrolling.h}
 -	\kactlimport{SIMD.h}
+diff --git a/initial-page.tex b/initial-page.tex
+new file mode 100644
+index 0000000..3ce09a8
+--- /dev/null
++++ b/initial-page.tex
+@@ -0,0 +1 @@
++\setcounter{page}{42}
