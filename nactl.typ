@@ -12,10 +12,14 @@
       outset: (x: 5pt),
       grid(
         columns: (1fr, 1fr, 1fr),
-        align(left, link("https://github.com/niklasmohrin/cp")[
-          #box(baseline: 1pt, image("assets/github-mark.png", alt: "GH:", height: 7pt))
-          #text(7pt, font: "Liberation Mono", "niklasmohrin/cp")
-        ]),
+        align(left, {
+          box(baseline: 1pt, image("assets/hpi.png", alt: "HPI Logo", height: 7pt))
+          text(7pt, font: "Liberation Mono", " Burnoutverbot (HPI)")
+          link("https://github.com/niklasmohrin/cp")[
+            #box(baseline: 1pt, image("assets/github-mark.png", alt: "GH:", height: 7pt))
+            #text(7pt, font: "Liberation Mono", "niklasmohrin/cp")
+          ]
+        }),
         align(center, text(weight: 700, title)),
         align(right, counter(page).display("1 / 1", both: true)),
       )
