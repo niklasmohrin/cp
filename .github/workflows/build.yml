@@ -1,0 +1,22 @@
+name: "Build PDF"
+on:
+  pull_request:
+  push:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v22
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix build '.#nactl' --out-link nactl.pdf
+    - run: nix build '.#nactl-complete' --out-link nactl-complete.pdf
+    - uses: actions/upload-artifact@v3
+      with:
+        name: nactl.pdf
+        path: nactl.pdf
+    - uses: actions/upload-artifact@v3
+      with:
+        name: nactl-complete.pdf
+        path: nactl-complete.pdf
