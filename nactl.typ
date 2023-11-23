@@ -76,6 +76,12 @@
 #include_snippet("Cut-Vertices", "snippets/cut_vertices.hpp")
 #include_snippet("SCC", "snippets/scc.hpp")
 
+== Tournaments
+
+1. The SCC graph is a path.
+2. There is a hamiltonian path which can be found by inserting each new node into the path with binary search.
+3. You can reconstruct the SCC graph from its indegree (or, by translation, outdegree) sequence: Pick vertices in increasing-indegree order. While the indegree of the set is too small, keep picking. Otherwise, start a new set.
+
 = Flows
 
 #include_snippet("Ford Fulkerson", "snippets/ford_fulkerson.hpp")
