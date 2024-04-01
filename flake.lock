@@ -54,7 +54,8 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "kactl": "kactl",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "typix": "typix"
       }
     },
     "systems": {
@@ -69,6 +70,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "typix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711493063,
+        "narHash": "sha256-8b6iIECLJ8XfgMX1r1/PdVJEMElZ9i/zO3QzArCiu+8=",
+        "owner": "loqusion",
+        "repo": "typix",
+        "rev": "7e6e9a7e160856900532cc04d0dce0dc87cad67d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "loqusion",
+        "repo": "typix",
         "type": "github"
       }
     }
