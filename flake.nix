@@ -77,7 +77,15 @@
                 gdb
                 gnumake
 
-                python310
+                (python310.withPackages (ps: with ps; [
+                  python-lsp-server
+                  pylsp-mypy
+                  pylsp-rope
+                  python-lsp-black
+                  isort
+                  python-lsp-ruff
+                  ujson
+                ]))
                 pypy310
               ];
             in
