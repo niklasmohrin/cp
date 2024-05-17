@@ -71,6 +71,7 @@
 #include_snippet("Dijkstra", "snippets/dijkstra.hpp")
 #include_snippet("Floyd Warshall", "snippets/floyd_warshall.hpp")
 #include_snippet("Kruskal", "snippets/kruskal.hpp")
+#include_snippet("Directed MST (Edmonds)", "snippets/edmonds.cpp")
 #include_snippet("Topological Order", "snippets/topo.hpp")
 #include_snippet("Bridges", "snippets/bridges.hpp")
 #include_snippet("Cut-Vertices", "snippets/cut_vertices.hpp")
