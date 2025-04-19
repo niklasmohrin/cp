@@ -15,17 +15,29 @@ using uint = unsigned;
 using ll = long long;
 using ull = unsigned long long;
 
-template <typename E = uint> using Graph = vector<vector<E>>;
+template <typename E = uint>
+using Graph = vector<vector<E>>;
 template <typename T>
-using min_priority_queue = priority_queue<T, vector<T>, std::greater<T>>;
+using min_priority_queue =
+    priority_queue<T, vector<T>, std::greater<T>>;
 
 #define rep(a, b) for (int a = 0; a < (b); ++a)
 #define urep(a, b) for (uint a = 0; a < (b); ++a)
 #define all(a) (a).begin(), (a).end()
 #define endl '\n'
 
+void solve_one();
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.precision(10);
+
+    uint t = 1;
+    cin >> t;
+    while (t--) {
+        solve_one();
+    }
 }
+
+void solve_one() {}
